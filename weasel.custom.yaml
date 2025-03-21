@@ -1,0 +1,66 @@
+# weasel.custom.yaml
+patch:
+
+  # 我的小狼毫自定义配置
+  # 2025-03-20T10:57:34+08:00
+  
+  #ref: https://1900.live/untitled-5/
+  #ref: https://github.com/rime/weasel/issues/1205
+  #ref: https://github.com/rime/weasel/wiki/Weasel-%E5%AE%9A%E5%88%B6%E5%8C%96
+  #ref: https://github.com/rime/weasel/pull/1177
+
+  # 中英文全局切换
+  "global_ascii": true
+
+  "show_notifications": true                   # 是否显示状态变化的通知：true；false；option_list（方案内的开头 option）
+  "show_notifications_time": 500              # 通知显示的时间，单位 ms
+
+  "font_face": "Segoe UI Emoji:30:39:Bold, Mircrosoft Yahei UI, Segoe UI"
+
+  style/+:
+    # 这一部份可能需要根据实际的UI缩放调整，注释后的是默认值，注释前的是根据150%x缩放倍数调整后的
+    label_format: "%s"
+    inline_preedit: true
+    font_point: 12 #15
+    #label_font_point: 11 #15
+    #comment_font_point: 13 #15
+    horizontal: true
+    color_scheme: win11light
+    color_scheme_dark: win11dark
+    layout:
+      baseline: 105
+      linespacing: 140
+      min_width: 8 #10
+      margin_x: 10 #16
+      margin_y: 6 #8
+      border: 2 #2
+      spacing: 16 #20
+      candidate_spacing: 18 #22
+      hilite_spacing: 5 #6
+      hilite_padding: 2 #2
+      hilite_padding_x: 6 #8
+      corner_radius: 8 #10
+      round_corner: 6 #8
+      shadow_radius: 6 #8
+  preset_color_schemes/+:
+  # 微软拼音输入法的hilited_mark_color会根据系统颜色变化，这里设置的颜色是系统颜色选择为蓝色时的取值
+    win11light:
+      name: " Win11浅色 / Win11light"
+      text_color: 0x191919
+      label_color: 0x5f5f5f
+      hilited_label_color: 0x5b5b5b
+      back_color: 0xf9f9f9
+      border_color: 0x0d191919 
+      hilited_mark_color: 0xc06700 #0x0067c0 实际上的颜色是这个，但不知为何weasel的R、B通道反了，故而在这里交换一下
+      hilited_candidate_back_color: 0xf0f0f0
+      shadow_color: 0x20000000
+    win11dark:
+      name: "Win11暗色 / Win11Dark"
+      text_color: 0xfcfcfc
+      label_color: 0xcfcfcf
+      back_color: 0x2c2c2c
+      hilited_label_color: 0xd2d2d2
+      border_color: 0x38191919 
+      hilited_mark_color: 0xffc24c  #0x4cc2ff 实际上的颜色是这个，但不知为何weasel的R、B通道反了，故而在这里交换一下
+      hilited_candidate_back_color: 0x383838
+      shadow_color: 0x20000000

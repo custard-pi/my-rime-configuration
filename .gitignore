@@ -1,0 +1,7 @@
+build/
+sync/
+*.userdb/
+installation.yaml
+custom_phrase.txt
+user.yaml
+*.code-workspace

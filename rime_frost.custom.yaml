@@ -1,0 +1,25 @@
+patch:
+  switches:
+    - name: ascii_mode
+      states: [ 中, Ａ ]
+    - name: ascii_punct # 中英标点
+      states: [ 。, . ]
+    - name: traditionalization
+      states: [ 简, 繁 ]
+    - name: emoji
+      states: [ 💀, 😄 ]
+    - name: full_shape
+      states: [ 半角, 全角 ]
+    - name: search_single_char  # search.lua 的功能开关，辅码查词时是否单字优先
+      abbrev: [词, 单]
+      states: [正常, 单字]
+
+  "punctuator/symbols":
+    __include: symbols_v_custom:/symbols #自定义的符号，恢复雾凇拼音的v模式，并做修正
+
+  "recognizer/patterns/punct": "^v([0-9]|10|[A-Za-z]+)$" #同样是用于恢复v模式
+
+  schema/icon: icons/pinyin_icons/zh.ico           # 更换中文图标
+  schema/ascii_icon: icons/pinyin_icons/en.ico     # 更换英文图标
+  schema/full_icon: icons/pinyin_icons/full.ico    # 更换全角图标
+  schema/half_icon: icons/pinyin_icons/half.ico    # 更换半角图标
