@@ -15,8 +15,6 @@ patch:
   "show_notifications": true                   # 是否显示状态变化的通知：true；false；option_list（方案内的开头 option）
   "show_notifications_time": 500              # 通知显示的时间，单位 ms
 
-  "font_face": "Segoe UI Emoji:30:39:Bold, Mircrosoft Yahei UI, Segoe UI"
-
   style/+:
     # 这一部份可能需要根据实际的UI缩放调整，注释后的是默认值，注释前的是根据150%x缩放倍数调整后的
     label_format: "%s"
@@ -24,6 +22,7 @@ patch:
     font_point: 12 #15
     #label_font_point: 11 #15
     #comment_font_point: 13 #15
+    "font_face": "Segoe UI Emoji:30:39, Noto Color Emoji SVG, Segoe UI Emoji, Twemoji Mozilla, Mircrosoft Yahei UI, MiSans, MiSans L3" #"Segoe UI Emoji:30:39:Bold, Mircrosoft Yahei UI, Segoe UI"
     horizontal: true
     color_scheme: win11light
     color_scheme_dark: win11dark
