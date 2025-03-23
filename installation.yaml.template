@@ -1,0 +1,9 @@
+distribution_code_name: name
+distribution_name: name
+distribution_version: 0.0.0
+install_time: "<>"
+rime_version: 0.0.0
+# 上面的用初次配置后的默认值即可
+
+installation_id: "<自定义的字符串，用于区分不同的安装实例>"
+sync_dir: '' # 注意Windows路径写法："c:\\path\\to\\sync\\dir" 或 'c:\path\to\sync\dir'
