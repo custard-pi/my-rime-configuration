@@ -29,7 +29,7 @@ patch:
     layout:
       baseline: 105
       linespacing: 140
-      min_width: 8 #10
+      min_width: 0 #10
       margin_x: 10 #16
       margin_y: 6 #8
       border: 2 #2
