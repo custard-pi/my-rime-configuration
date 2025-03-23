@@ -1,6 +1,7 @@
 build/
 sync/
 *.userdb/
+fcitx5-android/backup/
 installation.yaml
 custom_phrase.txt
 user.yaml
