@@ -158,6 +158,7 @@ function M.init(env)
         ["mo xie zuo"] = { text = "魔蝎座", comment = "摩羯(jié)座" },
         ["pi sa"] = { text = "披萨", comment = "比(bǐ)萨" },
         ["geng quan"] = { text = "梗犬", comment = "㹴犬" },
+        ["la ba ba"] = { text = "拉粑粑", comment= "拉㞎㞎" },
     }
 end
 
