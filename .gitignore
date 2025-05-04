@@ -4,5 +4,6 @@ sync/
 fcitx5-android/backup/
 installation.yaml
 custom_phrase.txt
+my_custom_phrase.txt
 user.yaml
 *.code-workspace

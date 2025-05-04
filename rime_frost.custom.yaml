@@ -17,6 +17,14 @@ patch:
   "punctuator/symbols":
     __include: symbols_v_custom:/symbols #自定义的符号，恢复雾凇拼音的v模式，并做修正
 
+  custom_phrase:
+    dictionary: ""
+    user_dict: my_custom_phrase  # 可以修改这里，改成自己的 txt 文件
+    db_class: stabledb        # 只读数据库，无法动态调频；设为 tabledb 可以动态调频
+    enable_completion: false  # 补全提示
+    enable_sentence: false    # 禁止造句
+    initial_quality: 99       # custom_phrase 的权重应该比 pinyin 和 melt_eng 大
+
   "recognizer/patterns/punct": "^v([0-9]|10|[A-Za-z]+)$" #同样是用于恢复v模式
 
   schema/icon: icons/pinyin_icons/zh.ico           # 更换中文图标
