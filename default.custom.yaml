@@ -4,7 +4,10 @@ patch:
     #- {schema: luna_pinyin_fluency}
     - {schema: rime_frost}
     #- {schema: rime_frost_double_pinyin_flypy}
-  
+
+  # 因为只有一个方案，所以不需要折叠
+  switcher/fold_options: false
+
   # Caps Lock 切换中英文
   ascii_composer:
     good_old_caps_lock: false
