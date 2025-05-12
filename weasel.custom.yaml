@@ -20,8 +20,8 @@ patch:
     label_format: "%s"
     inline_preedit: true
     font_point: 12 #15
-    #label_font_point: 11 #15
-    #comment_font_point: 13 #15
+    label_font_point: 12 #15
+    comment_font_point: 12 #15
     "font_face": "Segoe UI Emoji:30:39, Noto Color Emoji SVG, Noto Color Emoji, Segoe UI Emoji, Twemoji Mozilla, Mircrosoft Yahei UI, MiSans, MiSans L3" #"Segoe UI Emoji:30:39:Bold, Mircrosoft Yahei UI, Segoe UI"
     horizontal: true
     color_scheme: win11light
