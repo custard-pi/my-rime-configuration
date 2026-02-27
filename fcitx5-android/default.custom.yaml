@@ -1,4 +1,9 @@
 patch:
+  "switcher/hotkeys":
+    # - F4
+    - Control+grave
+    - Control+Shift+grave
+    # - Alt+grave
   schema_list:
     #- {schema: luna_pinyin_simp}
     #- {schema: luna_pinyin_fluency}
