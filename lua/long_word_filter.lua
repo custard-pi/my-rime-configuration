@@ -17,7 +17,7 @@ function M.func(input)
     local l = {}
     local firstWordLength = 0 -- 记录第一个候选词的长度，提前的候选词至少要比第一个候选词长
     local done = 0         -- 记录筛选了多少个词条(只提升 count 个词的权重)
-    local i = 1
+    local seen = 1
     for cand in input:iter() do
         local leng = utf8.len(cand.text)
         -- 只以第一个候选项的长度作为参考
@@ -25,8 +25,8 @@ function M.func(input)
             firstWordLength = leng
         end
         -- 不处理 M.idx 之前的候选项
-        if i < M.idx then
-            i = i + 1
+        if seen < M.idx then
+            seen = seen + 1
             yield(cand)
         -- 长词直接 yield，其余的放到 l 里
         elseif leng <= firstWordLength or cand.text:find("[%a%d]") then

@@ -81,9 +81,9 @@ function AuxFilter.readAuxTxt(txtpath)
     end
 
     local auxCodes = {}
-    for line in file:lines() do
-        if line ~= nil and line ~= "" then  -- 检查 line 是否为空
-            line = line:match("[^\r\n]+") -- 去掉換行符，不然 value 是帶著 \n 的
+    for raw_line in file:lines() do
+        if raw_line ~= nil and raw_line ~= "" then  -- 检查 line 是否为空
+            local line = raw_line:match("[^\r\n]+") -- 去掉換行符，不然 value 是帶著 \n 的
             local key, value = line:match("([^=]+)=(.+)") -- 分割 = 左右的變數
             if key and value then
                 auxCodes[key] = auxCodes[key] or {}
@@ -219,6 +219,7 @@ function AuxFilter.func(input, env)
 
         -- 遍歷每一個待選項
         for cand in input:iter() do
+            local out_cand = cand
             local auxCodes = AuxFilter.aux_code[cand.text] -- 僅單字非 nil
             local fullAuxCodes = AuxFilter.fullAux(env, cand.text)
 
@@ -236,21 +237,21 @@ function AuxFilter.func(input, env)
                     local shadowText = cand.text
                     local shadowComment = cand.comment
                     local originalCand = cand:get_genuine()
-                    cand = ShadowCandidate(originalCand, originalCand.type, shadowText,
+                    out_cand = ShadowCandidate(originalCand, originalCand.type, shadowText,
                         originalCand.comment .. shadowComment .. '(' .. codeComment .. ')')
                 else
-                    cand.comment = '(' .. codeComment .. ')'
+                    out_cand.comment = '(' .. codeComment .. ')'
                 end
             end
 
             -- 過濾輔助碼
             if #auxStr == 0 then
                 -- 沒有輔助碼、不需篩選，直接返回待選項
-                yield(cand)
+                yield(out_cand)
             elseif #auxStr > 0 and fullAuxCodes and (cand.type == 'user_phrase' or cand.type == 'phrase') and
                 AuxFilter.match(fullAuxCodes, auxStr) then
                 -- 匹配到辅助码的待选项，直接插入到候选框中( 获得靠前的位置 )
-                yield(cand)
+                yield(out_cand)
             else
                 -- 待选项字词 没有 匹配到当前的辅助码，插入到列表中，最后插入到候选框里( 获得靠后的位置 )
                 -- table.insert(insertLater, cand)
