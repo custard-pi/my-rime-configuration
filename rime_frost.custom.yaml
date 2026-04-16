@@ -1,4 +1,7 @@
 patch:
+  engine/processors/+:
+    - lua_processor@*ascii_mode_clear
+
   switches:
     - name: ascii_mode
       states: [ 中, Ａ ]
